@@ -29,16 +29,6 @@ A aplicação disponibiliza uma interface interativa no terminal, automação de
 
 Seu propósito é auxiliar profissionais de segurança da informação, pesquisadores e estudantes na compreensão de possíveis vetores de ataque e dos riscos associados aos mecanismos de autenticação do WhatsApp.
 
-## Principais funcionalidades
-
-- **Monitoramento de QR Code:** acompanhamento visual de códigos QR em ambientes autorizados.
-- **Espelhamento de QR Code:** visualização dos códigos monitorados através de uma interface web.
-- **Gerenciamento de sessões:** administração das sessões de teste registradas.
-- **Persistência de sessões:** preservação de perfis e estados do navegador.
-- **Automação de navegador:** integração com Playwright.
-- **Painel web:** interface centralizada para acompanhamento da aplicação.
-- **Configurações de rede:** suporte a diferentes modalidades de exposição.
-
 ### Opções disponíveis
 
 | Opção | Descrição |
@@ -48,17 +38,6 @@ Seu propósito é auxiliar profissionais de segurança da informação, pesquisa
 | Gerenciar sessões | Gerenciamento das sessões registradas |
 | Sobre o projeto | Informações sobre a ferramenta |
 | Sair | Encerramento da aplicação |
-
-## Tecnologias utilizadas
-
-| Tecnologia | Aplicação |
-|---|---|
-| Python | Desenvolvimento principal |
-| Flask | Servidor e interface web |
-| Playwright | Automação de navegador |
-| Chromium | Ambiente de navegação |
-| HTML5 / CSS3 | Interface visual |
-| JavaScript | Funcionalidades da interface |
 
 ## Instalação
 
