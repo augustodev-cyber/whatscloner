@@ -39,28 +39,6 @@ Seu propósito é auxiliar profissionais de segurança da informação, pesquisa
 - **Painel web:** interface centralizada para acompanhamento da aplicação.
 - **Configurações de rede:** suporte a diferentes modalidades de exposição.
 
-### Menu principal
-
-```text
-WhatsCloner Professional ✔ | v1.0
-
-Não nos responsabilizamos pelo uso indevido
-
-Autor: augustodev-cyber ✔
-GitHub: https://github.com/augustodev-cyber
-
-MENU PRINCIPAL — SESSÕES
-
-  > + Nova sessão / Inicializar ferramenta
-
-    Configurações
-    Gerenciar sessões
-    Sobre o projeto
-    Sair
-
-↑/↓ Navegar    ENTER Selecionar    ESC Voltar
-```
-
 ### Opções disponíveis
 
 | Opção | Descrição |
@@ -70,26 +48,6 @@ MENU PRINCIPAL — SESSÕES
 | Gerenciar sessões | Gerenciamento das sessões registradas |
 | Sobre o projeto | Informações sobre a ferramenta |
 | Sair | Encerramento da aplicação |
-
-## Demonstração visual
-
-### Painel de monitoramento
-
-<p align="center">
-  <img src="assets/dashboard.png" width="100%" alt="Painel web">
-</p>
-
-### Monitoramento de QR Code
-
-<p align="center">
-  <img src="assets/monitor.png" width="100%" alt="Monitoramento de QR Code">
-</p>
-
-### Gerenciamento de sessões
-
-<p align="center">
-  <img src="assets/sessions.png" width="100%" alt="Gerenciamento de sessões">
-</p>
 
 ## Tecnologias utilizadas
 
