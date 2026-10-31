@@ -1,0 +1,689 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WhatsApp</title>
+<link rel="icon"href="https://static.whatsapp.net/rsrc.php/yd/r/PfkSLByWV8O.webp">
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: #fcf5eb;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #111b21;
+}
+
+/* LOGO */
+.logo {
+    position: absolute;
+    top: 9px;
+    left: 38px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #00c853;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.logo svg {
+    width: 29px;
+    height: 29px;
+}
+
+/* CONTEÚDO CENTRAL */
+.container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 20px;
+}
+
+/* CARTÃO */
+.login-card {
+    width: 813px;
+    height: 375px;
+    background: #fff;
+    border: 1px solid #303030;
+    border-radius: 23px;
+    padding: 44px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 226px;
+    grid-template-rows: 1fr auto;
+    column-gap: 25px;
+}
+
+.left {
+    min-width: 0;
+}
+
+h1 {
+    font-size: 28px;
+    font-weight: 400;
+    margin-bottom: 37px;
+    letter-spacing: -.5px;
+}
+
+/* INSTRUÇÕES */
+.steps {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-bottom: 18px;
+}
+
+.step {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    font-size: 16px;
+    white-space: nowrap;
+}
+
+.number {
+    position: relative;
+    width: 25px;
+    height: 25px;
+    border: 1px solid #333;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    flex-shrink: 0;
+}
+
+.step:not(:last-child) .number::after {
+    content: "";
+    position: absolute;
+    top: 24px;
+    left: 11px;
+    width: 1px;
+    height: 18px;
+    background: #555;
+}
+
+.whatsapp-mini {
+    display: inline-flex !important;
+    width: 16px !important;
+    height: 16px !important;
+    min-width: 16px !important;
+    min-height: 16px !important;
+    flex: 0 0 16px !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: #00c853 !important;
+    border-radius: 4px !important;
+    margin-left: 2px;
+    padding: 0 !important;
+    vertical-align: middle;
+    overflow: hidden;
+}
+
+.whatsapp-mini svg {
+    display: block !important;
+    width: 13px !important;
+    height: 13px !important;
+    min-width: 13px !important;
+    max-width: 13px !important;
+    flex: 0 0 13px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* LINKS */
+a {
+    color: #111b21;
+    text-decoration: none;
+    border-bottom: 2px solid #00c853;
+    font-weight: 600;
+}
+
+.help {
+    font-size: 14px;
+}
+
+.external {
+    border: none;
+    margin-left: 4px;
+}
+
+/* QR CODE */
+.right {
+    width: 226px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.qr-container {
+    width: 214px;
+    height: 214px;
+    position: relative;
+    background: white;
+}
+
+.qr-image {
+    width: 100%;
+    height: 100%;
+    display: block;
+    image-rendering: pixelated;
+}
+
+/* LOGO CENTRAL DO QR */
+.qr-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 54px;
+    height: 54px;
+    background: white;
+    border: 3px solid #173b3b;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #173b3b;
+}
+
+/* RODAPÉ DO CARTÃO */
+.card-bottom {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 25px;
+    gap: 15px;
+}
+
+/* CONTINUAR CONECTADO */
+.remember {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 14px;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.remember input {
+    appearance: none;
+    width: 17px;
+    height: 17px;
+    background: #d9d9d9;
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.remember input:checked {
+    background: #00c853;
+}
+
+.remember input:checked::after {
+    content: "";
+    position: absolute;
+    left: 5px;
+    top: 2px;
+    width: 5px;
+    height: 9px;
+    border: solid #063b20;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.info-icon {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+    margin-left: -10px;
+}
+
+/* BOTÃO TELEFONE */
+.phone-link {
+    font-size: 14px;
+    white-space: nowrap;
+    font-weight: 500;
+    border-bottom: 2px solid #00c853;
+    padding-bottom: 3px;
+    cursor: pointer;
+}
+
+.phone-link svg {
+    margin-left: 4px;
+    vertical-align: -3px;
+}
+
+/* PARTE INFERIOR */
+.account {
+    margin-top: 31px;
+    font-size: 16px;
+    text-align: center;
+}
+
+.account a {
+    margin-left: 4px;
+}
+
+.account svg {
+    vertical-align: -2px;
+    margin-left: 3px;
+}
+
+/* SEGURANÇA */
+.security {
+    margin-top: 24px;
+    font-size: 14px;
+    color: #667781;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.lock-icon {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+}
+
+/* TERMOS */
+.terms {
+    margin-top: 24px;
+    color: #667781;
+    font-size: 11px;
+    text-align: center;
+}
+
+/* NOTIFICAÇÃO */
+.toast {
+    position: fixed;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    background: #202c33;
+    color: white;
+    padding: 13px 22px;
+    border-radius: 8px;
+    font-size: 14px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .3s, transform .3s;
+    z-index: 10;
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 850px) {
+    .container {
+        padding: 90px 18px 40px;
+    }
+
+    .login-card {
+        width: 100%;
+        max-width: 550px;
+        height: auto;
+        min-height: 375px;
+        display: flex;
+        flex-direction: column;
+        padding: 30px;
+        align-items: center;
+    }
+
+    .left {
+        width: 100%;
+    }
+
+    .right {
+        order: -1;
+        justify-content: center;
+        width: 100%;
+        margin-bottom: 25px;
+    }
+
+    h1 {
+        text-align: center;
+        margin-bottom: 28px;
+    }
+
+    .card-bottom {
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 30px;
+    }
+
+    .phone-link {
+        align-self: flex-end;
+    }
+
+    .step {
+        white-space: normal;
+        line-height: 1.4;
+    }
+
+    .account {
+        line-height: 1.7;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        left: 20px;
+        top: 15px;
+    }
+
+    .login-card {
+        padding: 25px 20px;
+        border-radius: 18px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    .qr-container {
+        width: 190px;
+        height: 190px;
+    }
+
+    .step {
+        font-size: 14px;
+    }
+
+    .remember {
+        font-size: 12px;
+        gap: 10px;
+    }
+
+    .account {
+        font-size: 14px;
+    }
+
+    .security {
+        font-size: 12px;
+        text-align: center;
+        line-height: 1.5;
+    }
+
+    .phone-link {
+        font-size: 13px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- LOGO WHATSAPP -->
+<div class="logo">
+
+<svg width="130px" height="130px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M3.50002 12C3.50002 7.30558 7.3056 3.5 12 3.5C16.6944 3.5 20.5 7.30558 20.5 12C20.5 16.6944 16.6944 20.5 12 20.5C10.3278 20.5 8.77127 20.0182 7.45798 19.1861C7.21357 19.0313 6.91408 18.9899 6.63684 19.0726L3.75769 19.9319L4.84173 17.3953C4.96986 17.0955 4.94379 16.7521 4.77187 16.4751C3.9657 15.176 3.50002 13.6439 3.50002 12ZM12 1.5C6.20103 1.5 1.50002 6.20101 1.50002 12C1.50002 13.8381 1.97316 15.5683 2.80465 17.0727L1.08047 21.107C0.928048 21.4637 0.99561 21.8763 1.25382 22.1657C1.51203 22.4552 1.91432 22.5692 2.28599 22.4582L6.78541 21.1155C8.32245 21.9965 10.1037 22.5 12 22.5C17.799 22.5 22.5 17.799 22.5 12C22.5 6.20101 17.799 1.5 12 1.5ZM14.2925 14.1824L12.9783 15.1081C12.3628 14.7575 11.6823 14.2681 10.9997 13.5855C10.2901 12.8759 9.76402 12.1433 9.37612 11.4713L10.2113 10.7624C10.5697 10.4582 10.6678 9.94533 10.447 9.53028L9.38284 7.53028C9.23954 7.26097 8.98116 7.0718 8.68115 7.01654C8.38113 6.96129 8.07231 7.046 7.84247 7.24659L7.52696 7.52195C6.76823 8.18414 6.3195 9.2723 6.69141 10.3741C7.07698 11.5163 7.89983 13.314 9.58552 14.9997C11.3991 16.8133 13.2413 17.5275 14.3186 17.8049C15.1866 18.0283 16.008 17.7288 16.5868 17.2572L17.1783 16.7752C17.4313 16.5691 17.5678 16.2524 17.544 15.9269C17.5201 15.6014 17.3389 15.308 17.0585 15.1409L15.3802 14.1409C15.0412 13.939 14.6152 13.9552 14.2925 14.1824Z" fill="#00c853"></path> </g></svg>
+
+    WhatsApp
+
+</div>
+
+<main class="container">
+
+    <section class="login-card">
+
+        <!-- COLUNA ESQUERDA -->
+        <div class="left">
+
+            <h1>Escaneie para entrar</h1>
+
+            <div class="steps">
+
+                <div class="step">
+
+                    <span class="number">1</span>
+
+                    <span>
+                        Use a câmera do seu celular para escanear o QR code.
+                    </span>
+
+                </div>
+
+                <div class="step">
+
+                    <span class="number">2</span>
+
+                    <span>
+                        Toque no link para abrir o <strong>WhatsApp</strong>
+
+                        <span style="
+    display:inline-block;
+    width:16px;
+    height:16px;
+    background:#00c853;
+    border-radius:4px;
+    vertical-align:middle;
+    margin-left:2px;
+    position:relative;
+    overflow:hidden;
+">
+    <svg xmlns="http://www.w3.org/2000/svg" aria-label="WhatsApp" role="img" viewBox="0 0 512 512" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><rect width="512" height="512" rx="15%" fill="#25d366"></rect><path fill="#25d366" stroke="#ffffff" stroke-width="26" d="M123 393l14-65a138 138 0 1150 47z"></path><path fill="#ffffff" d="M308 273c-3-2-6-3-9 1l-12 16c-3 2-5 3-9 1-15-8-36-17-54-47-1-4 1-6 3-8l9-14c2-2 1-4 0-6l-12-29c-3-8-6-7-9-7h-8c-2 0-6 1-10 5-22 22-13 53 3 73 3 4 23 40 66 59 32 14 39 12 48 10 11-1 22-10 27-19 1-3 6-16 2-18"></path></g></svg>
+</span>
+
+                    </span>
+
+                </div>
+
+                <div class="step">
+
+                    <span class="number">3</span>
+
+                    <span>
+                        Escaneie o QR code novamente para acessar sua conta.
+                    </span>
+
+                </div>
+
+            </div>
+
+            <div class="help">
+
+                <a href="#"
+                   onclick="notify('Área de ajuda demonstrativa'); return false;">
+
+                    Precisa de ajuda?
+
+                </a>
+
+                <span class="external">
+
+                    <svg width="13" height="13"
+                         viewBox="0 0 16 16"
+                         fill="none">
+
+                        <path d="M5 3h8v8M13 3 4 12"
+                              stroke="currentColor"
+                              stroke-width="1.5"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"/>
+
+                    </svg>
+
+                </span>
+
+            </div>
+
+        </div>
+
+        <!-- COLUNA DIREITA: QR CODE -->
+        <div class="right">
+
+            <div class="qr-container">
+
+                <img id="qr-image"
+                     class="qr-image"
+                     alt="QR Code ilustrativo não funcional">
+
+            </div>
+
+        </div>
+
+        <!-- RODAPÉ DO CARTÃO -->
+        <div class="card-bottom">
+
+            <label class="remember">
+
+                <input type="checkbox" checked>
+
+                <span>
+                    Continuar conectado neste navegador
+                </span>
+
+                <svg class="info-icon"
+                     viewBox="0 0 16 16"
+                     fill="none">
+
+                    <circle cx="8" cy="8" r="6.3"
+                            stroke="currentColor"
+                            stroke-width="1.3"/>
+
+                    <path d="M8 7v4M8 4.5v.2"
+                          stroke="currentColor"
+                          stroke-width="1.4"
+                          stroke-linecap="round"/>
+
+                </svg>
+
+            </label>
+
+            <a href="#"
+               class="phone-link"
+               onclick="notify('Opção de telefone demonstrativa'); return false;">
+
+                Entrar com número de telefone
+
+                <svg width="16"
+                     height="16"
+                     viewBox="0 0 16 16"
+                     fill="none">
+
+                    <path d="m6 3 5 5-5 5"
+                          stroke="currentColor"
+                          stroke-width="1.6"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"/>
+
+                </svg>
+
+            </a>
+
+        </div>
+
+    </section>
+
+    <!-- CRIAR CONTA -->
+    <div class="account">
+
+        Não tem uma conta do WhatsApp?
+
+        <a href="#"
+           onclick="notify('Cadastro demonstrativo'); return false;">
+
+            Começar
+
+        </a>
+
+        <svg width="13"
+             height="13"
+             viewBox="0 0 16 16"
+             fill="none">
+
+            <path d="M5 3h8v8M13 3 4 12"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"/>
+
+        </svg>
+
+    </div>
+
+    <!-- SEGURANÇA -->
+    <div class="security">
+
+        <svg class="lock-icon"
+             viewBox="0 0 16 16"
+             fill="none">
+
+            <rect x="3" y="7" width="10"
+                  height="8" rx="1.5"
+                  stroke="currentColor"
+                  stroke-width="1.4"/>
+
+            <path d="M5 7V4.5a3 3 0 0 1 6 0V7"
+                  stroke="currentColor"
+                  stroke-width="1.4"/>
+
+            <circle cx="8" cy="10.5" r="0.8"
+                    fill="currentColor"/>
+
+            <path d="M8 11.3v1"
+                  stroke="currentColor"
+                  stroke-width="1.2"/>
+
+        </svg>
+
+        Suas mensagens pessoais são protegidas com a criptografia de ponta a ponta.
+
+    </div>
+
+    <!-- TERMOS -->
+    <div class="terms">
+
+        Termos de Serviço e Política de Privacidade
+
+    </div>
+
+</main>
+
+<!-- NOTIFICAÇÃO -->
+<div class="toast" id="toast"></div>
+
+<script>
+const qr=document.getElementById('qr-image')
+let lastChange='',lastCaptureCount=-1;
+async function refresh(){
+  try{
+    const r=await fetch('/api/status',{cache:'no-store'}),s=await r.json();
+    if(s.image_available && (s.last_change!==lastChange || s.capture_count!==lastCaptureCount)){
+      if(s.last_change!==lastChange){
+        qr.src='/qr.png?v='+encodeURIComponent(s.last_change||Date.now());
+        lastChange=s.last_change;
+      }
+      lastCaptureCount=s.capture_count;
+    }
+    const healthy=s.running&&!s.last_error;
+    state.textContent=s.last_error?'Atenção: '+s.last_error:(s.running?'Monitor ativo':'Monitor indisponível');
+    dot.className='dot '+(healthy?'ok':(s.running?'':'bad'));
+    updated.textContent=s.last_capture?'Última verificação: '+new Date(s.last_capture).toLocaleString():'Aguardando primeira captura...';
+    detected.textContent='Elemento detectado: '+(s.detected_selector||'procurando...')+' · Capturas: '+s.capture_count;
+  }catch(e){state.textContent='Servidor indisponível';dot.className='dot bad';}
+}
+refresh();setInterval(refresh,1000);
+
+</script>
+
+</body>
+</html>
