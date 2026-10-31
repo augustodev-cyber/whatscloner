@@ -4,10 +4,6 @@
   <img src="assets/banner.png" width="100%" alt="WhatsCloner Banner">
 </p>
 
-<p align="center">
-  <img src="assets/preview.jpeg" width="100%" alt="WhatsCloner Banner">
-</p>
-
 <h3 align="center">Framework de Pentest para Segurança do WhatsApp</h3>
 
 <p align="center">
@@ -42,12 +38,6 @@ Seu propósito é auxiliar profissionais de segurança da informação, pesquisa
 - **Automação de navegador:** integração com Playwright.
 - **Painel web:** interface centralizada para acompanhamento da aplicação.
 - **Configurações de rede:** suporte a diferentes modalidades de exposição.
-
-## Interface do terminal
-
-<p align="center">
-  <img src="assets/banner.png" width="85%" alt="Menu principal WhatsCloner">
-</p>
 
 ### Menu principal
 
