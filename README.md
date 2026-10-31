@@ -1,7 +1,7 @@
 # WhatsCloner Professional
 
 <p align="center">
-  <img src="assets/banner.png" width="100%" alt="WhatsCloner Banner">
+  <img src="assets/banner.jpeg" width="100%" alt="WhatsCloner Banner">
 </p>
 
 <h3 align="center">Framework de Pentest para Segurança do WhatsApp</h3>
