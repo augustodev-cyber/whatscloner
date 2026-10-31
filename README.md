@@ -46,7 +46,7 @@ Seu propósito é auxiliar profissionais de segurança da informação, pesquisa
 ## Interface do terminal
 
 <p align="center">
-  <img src="assets/menu.png" width="85%" alt="Menu principal WhatsCloner">
+  <img src="assets/banner.png" width="85%" alt="Menu principal WhatsCloner">
 </p>
 
 ### Menu principal
